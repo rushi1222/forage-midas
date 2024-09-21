@@ -1,0 +1,2 @@
+general:
+  kafka-topic: your_topic_name  # Replace 'your_topic_name' with the actual Kafka topic name you are using
