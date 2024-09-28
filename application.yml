@@ -1,2 +1,17 @@
 general:
-  kafka-topic: your_topic_name  # Replace 'your_topic_name' with the actual Kafka topic name you are using
+  kafka-topic: midas-group  # Replace 'midas' with your actual Kafka topic name
+
+spring:
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+
+logging:
+  level:
+    root: INFO

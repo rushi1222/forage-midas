@@ -12,8 +12,10 @@ public class FileLoader {
         try {
             InputStream inputStream = this.getClass().getResourceAsStream(path);
             String fileText = IOUtils.toString(inputStream, "UTF-8");
+            System.out.println("Loaded File Text: " + fileText);
             return fileText.split(System.lineSeparator());
         } catch (Exception e) {
+            e.printStackTrace();
             return null;
         }
     }
